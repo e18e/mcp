@@ -12,7 +12,7 @@ if (!Array.isArray(files))
 const docs: Record<string, string> = {};
 const promises: Array<Promise<void>> = [];
 
-for (let file of files) {
+for (const file of files) {
 	if (!('download_url' in file)) {
 		console.warn(`Skipping file ${file.name}, no download_url`);
 		continue;
