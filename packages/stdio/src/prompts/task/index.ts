@@ -7,6 +7,7 @@ export function task(server: E18EMcpServer) {
 	server.prompt(
 		{
 			name: 'task',
+			title: 'e18e-task',
 			description:
 				'A prompt to execute a task using the e18e MCP server at the best of its abilities.',
 			icons,
