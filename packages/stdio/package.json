@@ -1,6 +1,9 @@
 {
 	"name": "@e18e/mcp",
 	"version": "0.0.1",
+	"publishConfig": {
+		"access": "public"
+	},
 	"description": "The official e18e MCP server for advising agents on modern and performant best practices",
 	"type": "module",
 	"bin": "./dist/index.js",
