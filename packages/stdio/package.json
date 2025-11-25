@@ -12,6 +12,7 @@
 		"copy-assets": "node ./scripts/copy-assets.ts",
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
 		"generate:docs": "node ./scripts/fetch-docs.ts",
+		"inspect": "pnpm build && mcp-inspector --transport stdio node ./dist/index.js",
 		"update:version": "node scripts/update-version.ts"
 	},
 	"keywords": [
@@ -21,13 +22,14 @@
 		"e18e"
 	],
 	"dependencies": {
-		"@tmcp/adapter-valibot": "catalog:tmcp",
-		"@tmcp/transport-stdio": "catalog:tmcp",
+		"@tmcp/adapter-valibot": "catalog:mcp",
+		"@tmcp/transport-stdio": "catalog:mcp",
 		"module-replacements": "^2.10.1",
-		"tmcp": "catalog:tmcp",
+		"tmcp": "catalog:mcp",
 		"valibot": "catalog:tooling"
 	},
 	"devDependencies": {
+		"@modelcontextprotocol/inspector": "catalog:mcp",
 		"@types/node": "catalog:tooling",
 		"@typescript/native-preview": "catalog:tooling",
 		"publint": "catalog:tooling"

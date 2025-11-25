@@ -1,7 +1,7 @@
 import type { E18EMcpServer } from '../../index.js';
 import * as v from 'valibot';
 import { icons } from '../../icons/index.js';
-import { prompt } from 'tmcp/utils';
+import { complete, prompt } from 'tmcp/utils';
 
 export function task(server: E18EMcpServer) {
 	server.prompt(
@@ -13,6 +13,12 @@ export function task(server: E18EMcpServer) {
 			schema: v.object({
 				task: v.string(),
 			}),
+			complete: {
+				task() {
+					// need this to avoid completion timeouts
+					return complete.values([]);
+				},
+			},
 		},
 		async ({ task }) => {
 			return prompt.text(
