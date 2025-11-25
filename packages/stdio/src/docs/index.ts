@@ -8,7 +8,7 @@ export async function get_docs() {
 	try {
 		const file = await readFile(
 			join(import.meta.dirname, './docs.json'),
-			'utf8'
+			'utf8',
 		);
 		return (docs_cache = JSON.parse(file));
 	} catch {

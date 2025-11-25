@@ -22,7 +22,7 @@ export function replacement_docs(server: E18EMcpServer) {
 					title: doc,
 					description: `Documentation for migrating from ${doc.replace(
 						'.md',
-						''
+						'',
 					)}`,
 				}));
 			},
@@ -30,8 +30,8 @@ export function replacement_docs(server: E18EMcpServer) {
 				slug(query) {
 					return complete.values(
 						Object.keys(docs).filter((doc) =>
-							doc.toLowerCase().includes(query.toLowerCase())
-						)
+							doc.toLowerCase().includes(query.toLowerCase()),
+						),
 					);
 				},
 			},
@@ -43,6 +43,6 @@ export function replacement_docs(server: E18EMcpServer) {
 				throw new Error('Document not found');
 			}
 			return resource.text(uri, text, 'text/plain');
-		}
+		},
 	);
 }

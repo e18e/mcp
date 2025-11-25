@@ -16,8 +16,8 @@ export function task(server: E18EMcpServer) {
 		},
 		async ({ task }) => {
 			return prompt.text(
-				`You are an expert software development assistant. When installing or using a package please always check with the e18e MCP server for possible better alternatives using the \`npm-i-checker\` command. Your task is: ${task}`
+				`You are an expert software development assistant. When installing or using a package please always check with the e18e MCP server for possible better alternatives using the \`npm-i-checker\` command. Your task is: ${task}`,
 			);
-		}
+		},
 	);
 }

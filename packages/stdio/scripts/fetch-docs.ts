@@ -3,7 +3,7 @@ import * as fs from 'fs/promises';
 const [, , dev] = process.argv;
 
 const files = await fetch(
-	'https://api.github.com/repos/es-tooling/module-replacements/contents/docs/modules'
+	'https://api.github.com/repos/es-tooling/module-replacements/contents/docs/modules',
 ).then((res) => res.json());
 
 if (!Array.isArray(files))
@@ -23,7 +23,7 @@ for (let file of files) {
 			.then(async (content) => {
 				docs[file.name] = content;
 				console.log(`Saved /docs/${file.name}`);
-			})
+			}),
 	);
 }
 
@@ -36,5 +36,5 @@ await fs.mkdir(folder, { recursive: true });
 await fs.writeFile(
 	`${folder}/docs.json`,
 	JSON.stringify(docs, null, 2),
-	'utf8'
+	'utf8',
 );

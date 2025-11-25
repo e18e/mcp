@@ -1,7 +1,7 @@
 {
 	"name": "@e18e/mcp",
 	"version": "0.0.1",
-	"description": "A TMCP (lightweight MCP) server",
+	"description": "The official e18e MCP server for advising agents on modern and performant best practices",
 	"type": "module",
 	"bin": "./dist/index.js",
 	"files": [
@@ -16,7 +16,8 @@
 	"keywords": [
 		"tmcp",
 		"mcp",
-		"server"
+		"server",
+		"e18e"
 	],
 	"dependencies": {
 		"@tmcp/adapter-valibot": "catalog:tmcp",
