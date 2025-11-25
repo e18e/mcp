@@ -9,12 +9,12 @@
 		"subfolder": "packages/stdio",
 		"source": "github"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"packages": [
 		{
 			"registryType": "npm",
 			"identifier": "@e18e/mcp",
-			"version": "0.0.1",
+			"version": "0.0.2",
 			"runtimeHint": "npx",
 			"transport": {
 				"type": "stdio"
