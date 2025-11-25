@@ -24,6 +24,7 @@
 	"dependencies": {
 		"@tmcp/adapter-valibot": "catalog:mcp",
 		"@tmcp/transport-stdio": "catalog:mcp",
+		"es-module-lexer": "catalog:tooling",
 		"module-replacements": "^2.10.1",
 		"tmcp": "catalog:mcp",
 		"valibot": "catalog:tooling"

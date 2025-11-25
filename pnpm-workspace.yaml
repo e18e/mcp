@@ -11,6 +11,7 @@ catalogs:
     '@eslint/js': ^9.39.1
     '@types/node': ^24.0.15
     '@typescript/native-preview': 7.0.0-dev.20251125.1
+    es-module-lexer: ^1.7.0
     eslint: ^9.39.1
     globals: ^16.5.0
     prettier: ^3.6.2

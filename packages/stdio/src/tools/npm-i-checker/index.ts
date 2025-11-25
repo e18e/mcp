@@ -1,13 +1,7 @@
-import type { E18EMcpServer } from '../../index.js';
-import * as v from 'valibot';
-import {
-	microUtilsReplacements,
-	preferredReplacements,
-} from 'module-replacements';
-import { get_docs } from '../../docs/index.js';
 import { tool } from 'tmcp/utils';
-
-const docs = await get_docs();
+import * as v from 'valibot';
+import type { E18EMcpServer } from '../../index.js';
+import { get_suggestions_for_package } from '../utils.js';
 
 export function npm_i_checker(server: E18EMcpServer) {
 	server.tool(
@@ -29,35 +23,13 @@ export function npm_i_checker(server: E18EMcpServer) {
 		},
 		async ({ command }) => {
 			const suggestions: string[] = [];
-			// remove the install command as we don't need it...this can technically include flasgs but they would simple not match any package names
+			// remove the install command as we don't need it...this can technically include flags but they would simple not match any package names
 			const [, , ...packages] = command.split(' ');
 			for (const pkg of packages) {
 				if (pkg.startsWith('-')) continue;
-				let replacement = microUtilsReplacements.moduleReplacements.find(
-					(replacement) => replacement.moduleName === pkg,
-				);
-				replacement =
-					replacement ??
-					preferredReplacements.moduleReplacements.find(
-						(replacement) => replacement.moduleName === pkg,
-					);
-				if (
-					replacement &&
-					replacement.type !== 'native' &&
-					replacement.type !== 'none'
-				) {
-					if (replacement.type === 'documented') {
-						if (!docs[replacement.docPath + '.md']) continue;
-						suggestions.push(
-							`Don't use \`${pkg}\` instead read the following document:\n\n${
-								docs[replacement.docPath + '.md']
-							}`,
-						);
-						continue;
-					}
-					suggestions.push(
-						`Don't use \`${pkg}\` instead ${replacement.replacement}`,
-					);
+				const suggestion = get_suggestions_for_package(pkg);
+				if (suggestion) {
+					suggestions.push(suggestion);
 				}
 			}
 			return tool.structured({ suggestions });
