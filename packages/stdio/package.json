@@ -6,7 +6,18 @@
 	},
 	"description": "The official e18e MCP server for advising agents on modern and performant best practices",
 	"type": "module",
-	"bin": "./dist/index.js",
+	"bin": {
+		"e18e-mcp": "dist/index.js"
+	},
+	"homepage": "https://github.com/e18e/mcp#readme",
+	"bugs": {
+		"url": "https://github.com/e18e/mcp/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/e18e/mcp.git",
+		"path": "packages/stdio"
+	},
 	"files": [
 		"./dist"
 	],
