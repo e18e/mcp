@@ -1,0 +1,33 @@
+{
+	"name": "@e18e/mcp",
+	"version": "0.0.1",
+	"description": "A TMCP (lightweight MCP) server",
+	"type": "module",
+	"bin": "./dist/index.js",
+	"files": [
+		"./dist"
+	],
+	"scripts": {
+		"build": "tsgo && pnpm generate:docs && pnpm copy-assets && publint",
+		"copy-assets": "node ./scripts/copy-assets.ts",
+		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
+		"generate:docs": "node ./scripts/fetch-docs.ts"
+	},
+	"keywords": [
+		"tmcp",
+		"mcp",
+		"server"
+	],
+	"dependencies": {
+		"@tmcp/adapter-valibot": "catalog:tmcp",
+		"@tmcp/transport-stdio": "catalog:tmcp",
+		"module-replacements": "^2.10.1",
+		"tmcp": "catalog:tmcp",
+		"valibot": "catalog:tooling"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:tooling",
+		"@typescript/native-preview": "catalog:tooling",
+		"publint": "catalog:tooling"
+	}
+}

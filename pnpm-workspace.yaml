@@ -1,0 +1,14 @@
+packages:
+  - ./packages/*
+
+catalogs:
+  tmcp:
+    '@tmcp/adapter-valibot': ^0.1.5
+    '@tmcp/transport-stdio': ^0.4.1
+    tmcp: ^1.18.1
+  tooling:
+    '@types/node': ^24.0.15
+    '@typescript/native-preview': 7.0.0-dev.20251125.1
+    prettier: ^3.6.2
+    publint: ^0.3.15
+    valibot: ^1.2.0

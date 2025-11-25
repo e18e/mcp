@@ -1,0 +1,16 @@
+{
+	"Setup Function": {
+		"scope": "javascript,typescript",
+		"prefix": "!setup-mcp",
+		"body": [
+			"import type { E18EMcpServer } from '../../index.js';",
+			"import * as v from 'valibot';",
+			"import { icons } from '../../icons/index.js';",
+			"",
+			"export function ${1:function_name}(server: E18EMcpServer) {",
+			"\t$0",
+			"}",
+		],
+		"description": "Create a setup function for a tool/resource/prompt handler",
+	},
+}

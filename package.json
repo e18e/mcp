@@ -1,0 +1,18 @@
+{
+  "name": "@e18e/mcp-root",
+  "version": "1.0.0",
+  "description": "A TMCP (lightweight MCP) server",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "pnpm -r build",
+    "lint": "prettier .",
+    "fix:lint": "prettier . --fix"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "catalog:tooling",
+    "@typescript/native-preview": "catalog:tooling",
+    "prettier": "catalog:tooling"
+  }
+}
