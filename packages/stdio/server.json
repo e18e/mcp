@@ -1,0 +1,24 @@
+{
+	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+	"name": "dev.e18e/e18e",
+	"title": "e18e",
+	"description": "The official Svelte MCP server providing docs and autofixing tools for Svelte development",
+	"repository": {
+		"id": "1103194575",
+		"url": "https://github.com/e18e/mcp",
+		"subfolder": "packages/stdio",
+		"source": "github"
+	},
+	"version": "0.0.1",
+	"packages": [
+		{
+			"registryType": "npm",
+			"identifier": "@e18e/mcp",
+			"version": "0.0.1",
+			"runtimeHint": "npx",
+			"transport": {
+				"type": "stdio"
+			}
+		}
+	]
+}

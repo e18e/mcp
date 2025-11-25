@@ -11,7 +11,8 @@
 		"build": "tsgo && pnpm generate:docs && pnpm copy-assets && publint",
 		"copy-assets": "node ./scripts/copy-assets.ts",
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
-		"generate:docs": "node ./scripts/fetch-docs.ts"
+		"generate:docs": "node ./scripts/fetch-docs.ts",
+		"update:version": "node scripts/update-version.ts"
 	},
 	"keywords": [
 		"tmcp",
