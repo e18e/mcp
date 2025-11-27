@@ -27,7 +27,8 @@
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
 		"generate:docs": "node ./scripts/fetch-docs.ts",
 		"inspect": "pnpm build && mcp-inspector --transport stdio node ./dist/index.js",
-		"update:version": "node scripts/update-version.ts"
+		"update:version": "node scripts/update-version.ts",
+		"test": "vitest"
 	},
 	"keywords": [
 		"tmcp",
@@ -41,7 +42,8 @@
 		"es-module-lexer": "catalog:tooling",
 		"module-replacements": "^2.10.1",
 		"tmcp": "catalog:mcp",
-		"valibot": "catalog:tooling"
+		"valibot": "catalog:tooling",
+		"vitest": "catalog:tooling"
 	},
 	"devDependencies": {
 		"@modelcontextprotocol/inspector": "catalog:mcp",

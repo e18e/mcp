@@ -6,7 +6,7 @@ import { StdioTransport } from '@tmcp/transport-stdio';
 import { setup_tools, setup_prompts, setup_resources } from './setup.js';
 import { icons } from './icons/index.js';
 
-const server = new McpServer(
+export const server = new McpServer(
 	{
 		name: 'e18e-mcp',
 		version: '1.0.0',

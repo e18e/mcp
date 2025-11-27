@@ -5,6 +5,7 @@ catalogs:
   mcp:
     '@modelcontextprotocol/inspector': ^0.17.2
     '@tmcp/adapter-valibot': ^0.1.5
+    '@tmcp/transport-in-memory': ^0.0.4
     '@tmcp/transport-stdio': ^0.4.1
     tmcp: ^1.18.1
   tooling:
@@ -18,3 +19,4 @@ catalogs:
     publint: ^0.3.15
     typescript-eslint: ^8.48.0
     valibot: ^1.2.0
+    vitest: ^4.0.14
