@@ -2,7 +2,7 @@
 	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
 	"name": "dev.e18e/e18e",
 	"title": "e18e",
-	"description": "The official Svelte MCP server providing docs and autofixing tools for Svelte development",
+	"description": "The official e18e MCP server keeping your agent in check from installing bloated dependencies.",
 	"repository": {
 		"id": "1103194575",
 		"url": "https://github.com/e18e/mcp",
