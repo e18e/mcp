@@ -16,6 +16,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Publish to MCP Registry
+        working-directory: packages/stdio
         env:
           MCP_KEY: ${{ secrets.MCP_KEY }}
         run: |
