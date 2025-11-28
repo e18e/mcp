@@ -1,5 +1,6 @@
 {
 	"name": "@e18e/mcp",
+	"mcpName": "dev.e18e/e18e",
 	"version": "0.0.3",
 	"publishConfig": {
 		"access": "public"
