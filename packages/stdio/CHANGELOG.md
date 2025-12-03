@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.4
+
+### Patch Changes
+
+- 5994dd8: fix: add `mcpName` to `package.json`
+
 ## 0.0.3
 
 ### Patch Changes
