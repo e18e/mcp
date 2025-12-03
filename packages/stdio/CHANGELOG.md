@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.5
+
+### Patch Changes
+
+- bfdbc8c: fix: update server description
+
 ## 0.0.4
 
 ### Patch Changes
