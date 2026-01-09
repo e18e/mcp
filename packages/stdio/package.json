@@ -43,13 +43,13 @@
 		"es-module-lexer": "catalog:tooling",
 		"module-replacements": "^2.10.1",
 		"tmcp": "catalog:mcp",
-		"valibot": "catalog:tooling",
-		"vitest": "catalog:tooling"
+		"valibot": "catalog:tooling"
 	},
 	"devDependencies": {
 		"@modelcontextprotocol/inspector": "catalog:mcp",
 		"@types/node": "catalog:tooling",
 		"@typescript/native-preview": "catalog:tooling",
-		"publint": "catalog:tooling"
+		"publint": "catalog:tooling",
+		"vitest": "catalog:tooling"
 	}
 }

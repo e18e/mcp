@@ -111,9 +111,6 @@ importers:
       valibot:
         specifier: catalog:tooling
         version: 1.2.0(typescript@5.9.3)
-      vitest:
-        specifier: catalog:tooling
-        version: 4.0.14(@types/node@24.10.1)
     devDependencies:
       '@modelcontextprotocol/inspector':
         specifier: catalog:mcp
@@ -127,6 +124,9 @@ importers:
       publint:
         specifier: catalog:tooling
         version: 0.3.15
+      vitest:
+        specifier: catalog:tooling
+        version: 4.0.14(@types/node@24.10.1)
 
 packages:
 
