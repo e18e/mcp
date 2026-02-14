@@ -17,6 +17,14 @@ This monorepo contains the following packages:
 
 - **[@e18e/mcp](./packages/stdio/)** - The main stdio implementation of the e18e MCP server
 
+## Sponsors
+
+<p align="center">
+  <a href="https://e18e.dev/sponsors.svg">
+    <img src="https://e18e.dev/sponsors.svg" alt="e18e community sponsors" />
+  </a>
+</p>
+
 # License
 
 MIT
