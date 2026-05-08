@@ -16,7 +16,7 @@ MCP server that flags inefficient or outdated npm packages and serves migration 
 
 Prereqs: Node.js ≥18 and npm/pnpm (build uses pnpm, runtime works via `npx`/`pnpm dlx`/`bunx`).
 
-The local (or stdio) version of the MCP server is available via the [`@e18e/mcp`](https://www.npmjs.com/package/@e18e/mcp) npm package. You can either install it globally and then reference it in your configuration or run it with `npx`:
+The local (or stdio) version of the MCP server is available via the [`@e18e/mcp`](https://npmx.dev/package/@e18e/mcp) npm package. You can either install it globally and then reference it in your configuration or run it with `npx`:
 
 ```bash
 npx -y @e18e/mcp
