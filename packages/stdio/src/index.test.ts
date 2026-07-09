@@ -106,7 +106,7 @@ describe('npm-i-checker', () => {
 
 					expect(tool.structuredContent).toEqual({
 						suggestions: [
-							"Don't use `arr-diff` instead Use a.filter((item) => !b.includes(item))",
+							"Don't use `arr-diff` instead `const difference = (a, b) => a.filter((item) => !b.includes(item))`",
 						],
 					});
 				});
@@ -118,7 +118,7 @@ describe('npm-i-checker', () => {
 
 					expect(tool.structuredContent).toEqual({
 						suggestions: [
-							"Don't use `arr-diff` instead Use a.filter((item) => !b.includes(item))",
+							"Don't use `arr-diff` instead `const difference = (a, b) => a.filter((item) => !b.includes(item))`",
 							expect.stringContaining(
 								"Don't use `chalk` instead read the following document:",
 							),
@@ -178,7 +178,7 @@ console.log(diff(a, b));`,
 
 		expect(tool.structuredContent).toEqual({
 			suggestions: [
-				"Don't use `arr-diff` instead Use a.filter((item) => !b.includes(item))",
+				"Don't use `arr-diff` instead `const difference = (a, b) => a.filter((item) => !b.includes(item))`",
 			],
 		});
 	});
@@ -203,8 +203,80 @@ onMount(()=>{
 				expect.stringContaining(
 					"Don't use `chalk` instead read the following document:",
 				),
-				"Don't use `arr-diff` instead Use a.filter((item) => !b.includes(item))",
+				"Don't use `arr-diff` instead `const difference = (a, b) => a.filter((item) => !b.includes(item))`",
 			],
+		});
+	});
+});
+
+describe('lookup-replacement', () => {
+	it('is an available tool', async () => {
+		const tools = await session.listTools();
+		expect(tools.tools).toContainEqual(
+			expect.objectContaining({
+				name: 'lookup-replacement',
+			}),
+		);
+	});
+
+	it("doesn't return anything for empty queries", async () => {
+		const tool = await session.callTool('lookup-replacement', {
+			query: '   ',
+		});
+
+		expect(tool.structuredContent).toEqual({
+			results: [],
+		});
+	});
+
+	it('finds preferred package replacements by package name', async () => {
+		const tool = await session.callTool('lookup-replacement', {
+			query: 'chalk',
+		});
+
+		expect(tool.structuredContent).toEqual({
+			results: expect.arrayContaining([
+				expect.objectContaining({
+					source: 'preferred',
+					module_name: 'chalk',
+					type: 'documented',
+					documentation: expect.stringContaining('chalk'),
+				}),
+			]),
+		});
+	});
+
+	it('finds micro utility replacements by replacement text', async () => {
+		const tool = await session.callTool('lookup-replacement', {
+			query: 'includes',
+		});
+
+		expect(tool.structuredContent).toEqual({
+			results: expect.arrayContaining([
+				expect.objectContaining({
+					source: 'micro-utility',
+					module_name: 'arr-diff',
+					replacement:
+						'`const difference = (a, b) => a.filter((item) => !b.includes(item))`',
+				}),
+			]),
+		});
+	});
+
+	it('finds native replacements by package name', async () => {
+		const tool = await session.callTool('lookup-replacement', {
+			query: 'array-includes',
+		});
+
+		expect(tool.structuredContent).toEqual({
+			results: expect.arrayContaining([
+				expect.objectContaining({
+					source: 'native',
+					module_name: 'array-includes',
+					replacement: 'Array.prototype.includes',
+					url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes',
+				}),
+			]),
 		});
 	});
 });

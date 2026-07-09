@@ -10,6 +10,7 @@
 		"changeset:version": "changeset version && pnpm --filter @e18e/mcp run update:version && git add --all",
 		"lint": "eslint . && prettier . --check",
 		"lint:fix": "eslint . --fix && prettier . --write",
+		"format": "prettier . --write",
 		"release": "changeset publish",
 		"test": "vitest"
 	},

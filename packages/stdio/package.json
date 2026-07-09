@@ -30,7 +30,7 @@
 		}
 	},
 	"scripts": {
-		"build": "pnpm generate:icons && tsgo && pnpm generate:docs && publint",
+		"build": "pnpm generate:icons && pnpm -C ../.. format && tsgo && pnpm generate:docs && publint",
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
 		"generate:docs": "node ./scripts/fetch-docs.ts",
 		"generate:icons": "node ./scripts/generate-icons.ts",
@@ -48,7 +48,7 @@
 		"@tmcp/adapter-valibot": "catalog:mcp",
 		"@tmcp/transport-stdio": "catalog:mcp",
 		"es-module-lexer": "catalog:tooling",
-		"module-replacements": "^2.10.1",
+		"module-replacements": "catalog:e18e",
 		"tmcp": "catalog:mcp",
 		"valibot": "catalog:tooling"
 	},
