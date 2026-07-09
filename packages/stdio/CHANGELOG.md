@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.9
+
+### Patch Changes
+
+- 6c85053: feat: add `lookup-replacement` tool
+
 ## 0.0.8
 
 ### Patch Changes
