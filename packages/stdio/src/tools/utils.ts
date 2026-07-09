@@ -1,18 +1,17 @@
-import {
-	microUtilsReplacements,
-	preferredReplacements,
-} from 'module-replacements';
+import microUtilsReplacements from 'module-replacements/manifests/micro-utilities.json' with { type: 'json' };
+import preferredReplacements from 'module-replacements/manifests/preferred.json' with { type: 'json' };
+import type { ModuleReplacement } from 'module-replacements';
 import { get_docs } from '../docs/index.js';
 
 const docs = await get_docs();
 
 export function get_suggestions_for_package(pkg: string) {
-	let replacement = microUtilsReplacements.moduleReplacements.find(
-		(replacement) => replacement.moduleName === pkg,
-	);
+	let replacement = (
+		microUtilsReplacements.moduleReplacements as ModuleReplacement[]
+	).find((replacement) => replacement.moduleName === pkg);
 	replacement =
 		replacement ??
-		preferredReplacements.moduleReplacements.find(
+		(preferredReplacements.moduleReplacements as ModuleReplacement[]).find(
 			(replacement) => replacement.moduleName === pkg,
 		);
 	if (

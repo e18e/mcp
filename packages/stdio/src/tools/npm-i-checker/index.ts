@@ -2,11 +2,13 @@ import { tool } from 'tmcp/utils';
 import * as v from 'valibot';
 import type { E18EMcpServer } from '../../index.js';
 import { get_suggestions_for_package } from '../utils.js';
+import { icons } from '../../icons/index.js';
 
 export function npm_i_checker(server: E18EMcpServer) {
 	server.tool(
 		{
 			name: 'npm-i-checker',
+			icons,
 			description:
 				'Check for outdated or insecure npm packages in an install script like `npm i` or `pnpm add` or `yarn add` or `bun i`.',
 			schema: v.object({
