@@ -4,7 +4,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "tsc --noEmit",
+		"build": "tsgo --noEmit",
 		"deploy": "wrangler deploy",
 		"deploy:preview": "wrangler versions upload",
 		"dev": "wrangler dev",
