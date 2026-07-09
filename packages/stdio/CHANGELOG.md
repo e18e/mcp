@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.8
+
+### Patch Changes
+
+- 7d64486: feat: add remote mcp
+
 ## 0.0.7
 
 ### Patch Changes
