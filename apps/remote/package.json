@@ -1,0 +1,22 @@
+{
+	"name": "@e18e/mcp-remote",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tsc --noEmit",
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"cf-typegen": "wrangler types"
+	},
+	"dependencies": {
+		"@e18e/mcp": "workspace:*",
+		"@tmcp/transport-http": "catalog:mcp"
+	},
+	"devDependencies": {
+		"@types/node": "catalog:tooling",
+		"@typescript/native-preview": "catalog:tooling",
+		"wrangler": "catalog:cloudflare"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "remote",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-07-09",
+	"observability": {
+		"enabled": false,
+	},
+	"workers_dev": false,
+	"preview_urls": true,
+	"compatibility_flags": ["nodejs_compat"],
+}

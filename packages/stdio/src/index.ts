@@ -24,6 +24,8 @@ export const server = new McpServer(
 
 export type E18EMcpServer = typeof server;
 
+export { icon_files } from './icons/index.js';
+
 setup_tools(server);
 setup_resources(server);
 setup_prompts(server);

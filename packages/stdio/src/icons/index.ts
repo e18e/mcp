@@ -1,1 +1,1 @@
-export { icons } from './generated.js';
+export { icons, icon_files } from './generated.js';
