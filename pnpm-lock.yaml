@@ -9,6 +9,10 @@ catalogs:
     wrangler:
       specifier: ^4.107.1
       version: 4.107.1
+  e18e:
+    module-replacements:
+      specifier: ^3.0.0
+      version: 3.0.0
   mcp:
     '@modelcontextprotocol/inspector':
       specifier: ^0.18.0
@@ -129,8 +133,8 @@ importers:
         specifier: catalog:tooling
         version: 1.7.0
       module-replacements:
-        specifier: ^2.10.1
-        version: 2.10.1
+        specifier: catalog:e18e
+        version: 3.0.0
       tmcp:
         specifier: catalog:mcp
         version: 1.19.4(typescript@5.9.3)
@@ -2336,8 +2340,8 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  module-replacements@2.10.1:
-    resolution: {integrity: sha512-qkKuLpMHDqRSM676OPL7HUpCiiP3NSxgf8NNR1ga2h/iJLNKTsOSjMEwrcT85DMSti2vmOqxknOVBGWj6H6etQ==}
+  module-replacements@3.0.0:
+    resolution: {integrity: sha512-tHIZqde+RlyNRobAIjfcH5UIgIrEbZbDGRL6J/x+HERX/g8O9mrm0p6knJbsTXmQtDvZ+eFP+xfOP3/9jHk6YA==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -5102,7 +5106,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.2
 
-  module-replacements@2.10.1: {}
+  module-replacements@3.0.0: {}
 
   mri@1.2.0: {}
 

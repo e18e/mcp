@@ -6,6 +6,8 @@ catalogs:
   cloudflare:
     '@cloudflare/vitest-pool-workers': ^0.12.21
     wrangler: ^4.107.1
+  e18e:
+    module-replacements: ^3.0.0
   mcp:
     '@modelcontextprotocol/inspector': ^0.18.0
     '@tmcp/adapter-valibot': ^0.1.6
