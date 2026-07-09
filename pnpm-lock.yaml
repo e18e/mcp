@@ -10,23 +10,23 @@ catalogs:
       specifier: ^0.18.0
       version: 0.18.0
     '@tmcp/adapter-valibot':
-      specifier: ^0.1.5
-      version: 0.1.5
+      specifier: ^0.1.6
+      version: 0.1.6
     '@tmcp/transport-in-memory':
-      specifier: ^0.0.4
+      specifier: 0.0.4
       version: 0.0.4
     '@tmcp/transport-stdio':
-      specifier: ^0.4.1
-      version: 0.4.1
+      specifier: ^0.4.3
+      version: 0.4.3
     tmcp:
-      specifier: ^1.18.1
-      version: 1.18.1
+      specifier: ^1.19.4
+      version: 1.19.4
   tooling:
     '@eslint/js':
       specifier: ^9.39.2
       version: 9.39.2
     '@types/node':
-      specifier: ^25.0.3
+      specifier: ^26.1.1
       version: 25.0.3
     '@typescript/native-preview':
       specifier: 7.0.0-dev.20260109.1
@@ -50,8 +50,8 @@ catalogs:
       specifier: ^8.52.0
       version: 8.52.0
     valibot:
-      specifier: ^1.2.0
-      version: 1.2.0
+      specifier: ^1.4.2
+      version: 1.4.2
     vitest:
       specifier: ^4.0.16
       version: 4.0.16
@@ -68,7 +68,7 @@ importers:
         version: 9.39.2
       '@tmcp/transport-in-memory':
         specifier: catalog:mcp
-        version: 0.0.4(tmcp@1.18.1(typescript@5.9.3))
+        version: 0.0.4(tmcp@1.19.4(typescript@5.9.3))
       '@types/node':
         specifier: catalog:tooling
         version: 25.0.3
@@ -91,14 +91,39 @@ importers:
         specifier: catalog:tooling
         version: 4.0.16(@types/node@25.0.3)
 
-  packages/stdio:
+  packages/mcp-server:
     dependencies:
       '@tmcp/adapter-valibot':
         specifier: catalog:mcp
         version: 0.1.5(tmcp@1.18.1(typescript@5.9.3))(valibot@1.2.0(typescript@5.9.3))
+      es-module-lexer:
+        specifier: catalog:tooling
+        version: 1.7.0
+      tmcp:
+        specifier: catalog:mcp
+        version: 1.18.1(typescript@5.9.3)
+      valibot:
+        specifier: catalog:tooling
+        version: 1.2.0(typescript@5.9.3)
+    devDependencies:
+      '@tmcp/transport-in-memory':
+        specifier: catalog:mcp
+        version: 0.0.4(tmcp@1.18.1(typescript@5.9.3))
+      '@types/node':
+        specifier: catalog:tooling
+        version: 26.1.1
+      vitest:
+        specifier: catalog:tooling
+        version: 4.0.16(@types/node@26.1.1)
+
+  packages/stdio:
+    dependencies:
+      '@tmcp/adapter-valibot':
+        specifier: catalog:mcp
+        version: 0.1.6(tmcp@1.19.4(typescript@5.9.3))(valibot@1.4.2(typescript@5.9.3))
       '@tmcp/transport-stdio':
         specifier: catalog:mcp
-        version: 0.4.1(tmcp@1.18.1(typescript@5.9.3))
+        version: 0.4.3(tmcp@1.19.4(typescript@5.9.3))
       es-module-lexer:
         specifier: catalog:tooling
         version: 1.7.0
@@ -107,10 +132,10 @@ importers:
         version: 2.10.1
       tmcp:
         specifier: catalog:mcp
-        version: 1.18.1(typescript@5.9.3)
+        version: 1.19.4(typescript@5.9.3)
       valibot:
         specifier: catalog:tooling
-        version: 1.2.0(typescript@5.9.3)
+        version: 1.4.2(typescript@5.9.3)
     devDependencies:
       '@modelcontextprotocol/inspector':
         specifier: catalog:mcp
@@ -1017,9 +1042,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@standard-schema/spec@1.0.0':
-    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
-
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
@@ -1029,13 +1051,19 @@ packages:
       tmcp: ^1.17.0
       valibot: ^1.1.0
 
+  '@tmcp/adapter-valibot@0.1.6':
+    resolution: {integrity: sha512-drirZeNinhYLiRSMksN+m//u0ImFxtGRk1Vp425Xp/7CbBXFQdjAG+f7grssyHAukbVTGzmWsMMP6ejrGVErUA==}
+    peerDependencies:
+      tmcp: ^1.17.0
+      valibot: ^1.1.0
+
   '@tmcp/transport-in-memory@0.0.4':
     resolution: {integrity: sha512-5zHEWRcogd9MnkV4oqbif/vV4A4tnc873qgl4fwd+GM+pmQ0q08p75zW74p2WRL4B1RXbesp9gJ9pSXIFeB68g==}
     peerDependencies:
       tmcp: ^1.17.0
 
-  '@tmcp/transport-stdio@0.4.1':
-    resolution: {integrity: sha512-464x8HNrvjLLtKZsrFWUL13GnBFFtrNoWxnE0rHbcmQSYRqtS8WseWtQCYstj2Vcg9kRlIUVFGDIljGNP4/N4A==}
+  '@tmcp/transport-stdio@0.4.3':
+    resolution: {integrity: sha512-chdmSwk7PSXjkaQId2OAY8ZMFrTFWwckfCyXJuw6b6WFK9IMK95EoU2VDFioybcmawuQox0MNPM5R2DVxlptoA==}
     peerDependencies:
       tmcp: ^1.16.3
 
@@ -1068,6 +1096,9 @@ packages:
 
   '@types/node@25.0.3':
     resolution: {integrity: sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA==}
+
+  '@types/node@26.1.1':
+    resolution: {integrity: sha512-nxAkRSVkN1Y0JC1W8ky/fTfkGsMmcrRsbx+3XoZE+rMOX71kLYTV7fLXpqud1GpbpP5TuffXFqfX7fH2GgZREw==}
 
   '@typescript-eslint/eslint-plugin@8.52.0':
     resolution: {integrity: sha512-okqtOgqu2qmZJ5iN4TWlgfF171dZmx2FzdOv2K/ixL2LZWDStL8+JgQerI2sa8eAEfoydG9+0V96m7V+P8yE1Q==}
@@ -2348,6 +2379,9 @@ packages:
   tmcp@1.18.1:
     resolution: {integrity: sha512-P7MR8zKO447R317sm1rQES4JBkhibJS+W1YIz8neysO+rGr3oHSN1FO0vWgq/EtNz7EU57iutCZaBRBuiBbPvA==}
 
+  tmcp@1.19.4:
+    resolution: {integrity: sha512-fMoUJ3Gef9iA0yKZNeW2SQCCKTluCwghUyOz/qxPS8XxrQk6Jlw4lgql3S+s6L//FteLeSJ7erKxMWl727mZoQ==}
+
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -2406,6 +2440,9 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
+
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
@@ -2445,6 +2482,14 @@ packages:
 
   valibot@1.2.0:
     resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  valibot@1.4.2:
+    resolution: {integrity: sha512-gjdCvJ6d3RyHAneqxMYMW9QMCwYMb3jpOO0IyHZV1bnRHFBHrX3VkIILt5XYR0WhwHiH7Mty8ovuPZ/O3gamrg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -3448,25 +3493,35 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.53.3':
     optional: true
 
-  '@standard-schema/spec@1.0.0': {}
-
   '@standard-schema/spec@1.1.0': {}
 
   '@tmcp/adapter-valibot@0.1.5(tmcp@1.18.1(typescript@5.9.3))(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
-      '@standard-schema/spec': 1.0.0
+      '@standard-schema/spec': 1.1.0
       '@valibot/to-json-schema': 1.3.0(valibot@1.2.0(typescript@5.9.3))
       tmcp: 1.18.1(typescript@5.9.3)
       valibot: 1.2.0(typescript@5.9.3)
+
+  '@tmcp/adapter-valibot@0.1.6(tmcp@1.19.4(typescript@5.9.3))(valibot@1.4.2(typescript@5.9.3))':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@valibot/to-json-schema': 1.3.0(valibot@1.4.2(typescript@5.9.3))
+      tmcp: 1.19.4(typescript@5.9.3)
+      valibot: 1.4.2(typescript@5.9.3)
 
   '@tmcp/transport-in-memory@0.0.4(tmcp@1.18.1(typescript@5.9.3))':
     dependencies:
       json-rpc-2.0: 1.7.1
       tmcp: 1.18.1(typescript@5.9.3)
 
-  '@tmcp/transport-stdio@0.4.1(tmcp@1.18.1(typescript@5.9.3))':
+  '@tmcp/transport-in-memory@0.0.4(tmcp@1.19.4(typescript@5.9.3))':
     dependencies:
-      tmcp: 1.18.1(typescript@5.9.3)
+      json-rpc-2.0: 1.7.1
+      tmcp: 1.19.4(typescript@5.9.3)
+
+  '@tmcp/transport-stdio@0.4.3(tmcp@1.19.4(typescript@5.9.3))':
+    dependencies:
+      tmcp: 1.19.4(typescript@5.9.3)
 
   '@tsconfig/node10@1.0.12': {}
 
@@ -3492,6 +3547,10 @@ snapshots:
   '@types/node@25.0.3':
     dependencies:
       undici-types: 7.16.0
+
+  '@types/node@26.1.1':
+    dependencies:
+      undici-types: 8.3.0
 
   '@typescript-eslint/eslint-plugin@8.52.0(@typescript-eslint/parser@8.52.0(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(typescript@5.9.3)':
     dependencies:
@@ -3619,6 +3678,10 @@ snapshots:
     dependencies:
       valibot: 1.2.0(typescript@5.9.3)
 
+  '@valibot/to-json-schema@1.3.0(valibot@1.4.2(typescript@5.9.3))':
+    dependencies:
+      valibot: 1.4.2(typescript@5.9.3)
+
   '@vitest/expect@4.0.16':
     dependencies:
       '@standard-schema/spec': 1.1.0
@@ -3635,6 +3698,14 @@ snapshots:
       magic-string: 0.30.21
     optionalDependencies:
       vite: 7.2.4(@types/node@25.0.3)
+
+  '@vitest/mocker@4.0.16(vite@7.2.4(@types/node@26.1.1))':
+    dependencies:
+      '@vitest/spy': 4.0.16
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      vite: 7.2.4(@types/node@26.1.1)
 
   '@vitest/pretty-format@4.0.16':
     dependencies:
@@ -4780,11 +4851,21 @@ snapshots:
 
   tmcp@1.18.1(typescript@5.9.3):
     dependencies:
-      '@standard-schema/spec': 1.0.0
+      '@standard-schema/spec': 1.1.0
       json-rpc-2.0: 1.7.1
       sqids: 0.3.0
       uri-template-matcher: 1.1.2
       valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
+
+  tmcp@1.19.4(typescript@5.9.3):
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      json-rpc-2.0: 1.7.1
+      sqids: 0.3.0
+      uri-template-matcher: 1.1.2
+      valibot: 1.4.2(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
 
@@ -4845,6 +4926,8 @@ snapshots:
 
   undici-types@7.16.0: {}
 
+  undici-types@8.3.0: {}
+
   universalify@0.1.2: {}
 
   unpipe@1.0.0: {}
@@ -4872,6 +4955,10 @@ snapshots:
     optionalDependencies:
       typescript: 5.9.3
 
+  valibot@1.4.2(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
   vary@1.1.2: {}
 
   vite@7.2.4(@types/node@25.0.3):
@@ -4884,6 +4971,18 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       '@types/node': 25.0.3
+      fsevents: 2.3.3
+
+  vite@7.2.4(@types/node@26.1.1):
+    dependencies:
+      esbuild: 0.25.12
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+      postcss: 8.5.6
+      rollup: 4.53.3
+      tinyglobby: 0.2.15
+    optionalDependencies:
+      '@types/node': 26.1.1
       fsevents: 2.3.3
 
   vitest@4.0.16(@types/node@25.0.3):
@@ -4910,6 +5009,43 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.0.3
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
+
+  vitest@4.0.16(@types/node@26.1.1):
+    dependencies:
+      '@vitest/expect': 4.0.16
+      '@vitest/mocker': 4.0.16(vite@7.2.4(@types/node@26.1.1))
+      '@vitest/pretty-format': 4.0.16
+      '@vitest/runner': 4.0.16
+      '@vitest/snapshot': 4.0.16
+      '@vitest/spy': 4.0.16
+      '@vitest/utils': 4.0.16
+      es-module-lexer: 1.7.0
+      expect-type: 1.2.2
+      magic-string: 0.30.21
+      obug: 2.1.1
+      pathe: 2.0.3
+      picomatch: 4.0.3
+      std-env: 3.10.0
+      tinybench: 2.9.0
+      tinyexec: 1.0.2
+      tinyglobby: 0.2.15
+      tinyrainbow: 3.0.3
+      vite: 7.2.4(@types/node@26.1.1)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 26.1.1
     transitivePeerDependencies:
       - jiti
       - less
