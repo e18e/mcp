@@ -6,7 +6,7 @@ import { get_docs } from '../docs/index.js';
 const docs = await get_docs();
 
 export function get_suggestions_for_package(pkg: string) {
-	let replacement: ModuleReplacement | undefined = (
+	let replacement = (
 		microUtilsReplacements.moduleReplacements as ModuleReplacement[]
 	).find((replacement) => replacement.moduleName === pkg);
 	replacement =
