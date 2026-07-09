@@ -1,6 +1,6 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "remote",
+	"name": "mcp",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-07-09",
 	"observability": {
