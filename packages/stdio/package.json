@@ -30,10 +30,10 @@
 		}
 	},
 	"scripts": {
-		"build": "tsgo && pnpm generate:docs && pnpm copy-assets && publint",
-		"copy-assets": "node ./scripts/copy-assets.ts",
+		"build": "pnpm generate:icons && tsgo && pnpm generate:docs && publint",
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
 		"generate:docs": "node ./scripts/fetch-docs.ts",
+		"generate:icons": "node ./scripts/generate-icons.ts",
 		"inspect": "pnpm build && mcp-inspector --transport stdio node ./dist/run.js",
 		"update:version": "node scripts/update-version.ts",
 		"test": "vitest"
