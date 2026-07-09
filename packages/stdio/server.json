@@ -10,6 +10,22 @@
 		"source": "github"
 	},
 	"version": "0.0.7",
+	"icons": [
+		{
+			"src": "https://mcp.e18e.dev/icons/icon.svg",
+			"mimeType": "image/svg+xml"
+		},
+		{
+			"src": "https://mcp.e18e.dev/icons/icon.png",
+			"mimeType": "image/png"
+		}
+	],
+	"remotes": [
+		{
+			"type": "streamable-http",
+			"url": "https://mcp.e18e.dev/mcp"
+		}
+	],
 	"packages": [
 		{
 			"registryType": "npm",

@@ -3,16 +3,20 @@ packages:
   - ./apps/*
 
 catalogs:
+  cloudflare:
+    '@cloudflare/vitest-pool-workers': ^0.12.21
+    wrangler: ^4.107.1
   mcp:
     '@modelcontextprotocol/inspector': ^0.18.0
     '@tmcp/adapter-valibot': ^0.1.6
+    '@tmcp/transport-http': ^0.8.6
     '@tmcp/transport-in-memory': 0.0.4
     '@tmcp/transport-stdio': ^0.4.3
     tmcp: ^1.19.4
   tooling:
     '@eslint/js': ^9.39.2
     '@types/node': ^26.1.1
-    '@typescript/native-preview': 7.0.0-dev.20260109.1
+    '@typescript/native-preview': 7.0.0-dev.20260707.2
     es-module-lexer: ^1.7.0
     eslint: ^9.39.2
     globals: ^17.0.0
