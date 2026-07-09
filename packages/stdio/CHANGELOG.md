@@ -1,5 +1,12 @@
 # @e18e/mcp
 
+## 0.0.6
+
+### Patch Changes
+
+- 127e3ef: Bump various dependencies
+- efd0ed8: feat: export server from `stdio`
+
 ## 0.0.5
 
 ### Patch Changes
