@@ -9,8 +9,4 @@
 	"workers_dev": false,
 	"preview_urls": true,
 	"compatibility_flags": ["nodejs_compat"],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./static/",
-	},
 }

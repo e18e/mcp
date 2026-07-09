@@ -1,4 +1,4 @@
-import { server } from '@e18e/mcp';
+import { server, icon_files } from '@e18e/mcp';
 import { HttpTransport } from '@tmcp/transport-http';
 
 const http_transport = new HttpTransport(server, {
@@ -6,8 +6,28 @@ const http_transport = new HttpTransport(server, {
 	disableSse: true,
 });
 
+const icon_responses = new Map(
+	Object.entries(icon_files).map(([name, { src, mimeType }]) => {
+		const base64 = src.slice(src.indexOf(',') + 1);
+		const bytes = Uint8Array.from(atob(base64), (char) => char.charCodeAt(0));
+
+		return [`/icons/${name}`, { bytes, mimeType }];
+	}),
+);
+
 export default {
 	async fetch(request): Promise<Response> {
+		const icon = icon_responses.get(new URL(request.url).pathname);
+
+		if (icon) {
+			return new Response(icon.bytes, {
+				headers: {
+					'content-type': icon.mimeType,
+					'cache-control': 'public, max-age=86400',
+				},
+			});
+		}
+
 		return (
 			(await http_transport.respond(request)) ??
 			new Response('Not Found', { status: 404 })
