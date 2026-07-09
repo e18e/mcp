@@ -10,7 +10,6 @@
 		"isolatedModules": true,
 		"verbatimModuleSyntax": true,
 		"isolatedDeclarations": false,
-		"esModuleInterop": false,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"noImplicitAny": true,
@@ -32,6 +31,7 @@
 		"noPropertyAccessFromIndexSignature": true,
 		"allowUnusedLabels": true,
 		"allowUnreachableCode": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"types": ["node"]
 	}
 }

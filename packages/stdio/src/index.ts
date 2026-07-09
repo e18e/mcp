@@ -1,8 +1,5 @@
-#!/usr/bin/env node
-
 import { McpServer } from 'tmcp';
 import { ValibotJsonSchemaAdapter } from '@tmcp/adapter-valibot';
-import { StdioTransport } from '@tmcp/transport-stdio';
 import { setup_tools, setup_prompts, setup_resources } from './setup.js';
 import { icons } from './icons/index.js';
 
@@ -30,6 +27,3 @@ export type E18EMcpServer = typeof server;
 setup_tools(server);
 setup_resources(server);
 setup_prompts(server);
-
-const stdio_transport = new StdioTransport(server);
-stdio_transport.listen();

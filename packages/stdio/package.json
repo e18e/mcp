@@ -8,7 +8,7 @@
 	"description": "The official e18e MCP server for advising agents on modern and performant best practices",
 	"type": "module",
 	"bin": {
-		"e18e-mcp": "dist/index.js"
+		"e18e-mcp": "dist/run.js"
 	},
 	"homepage": "https://github.com/e18e/mcp#readme",
 	"bugs": {
@@ -20,14 +20,21 @@
 		"path": "packages/stdio"
 	},
 	"files": [
-		"./dist"
+		"./dist",
+		"!./dist/*.test.{js,d.ts,js.map}"
 	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
 	"scripts": {
 		"build": "tsgo && pnpm generate:docs && pnpm copy-assets && publint",
 		"copy-assets": "node ./scripts/copy-assets.ts",
 		"generate:docs:dev": "node ./scripts/fetch-docs.ts dev",
 		"generate:docs": "node ./scripts/fetch-docs.ts",
-		"inspect": "pnpm build && mcp-inspector --transport stdio node ./dist/index.js",
+		"inspect": "pnpm build && mcp-inspector --transport stdio node ./dist/run.js",
 		"update:version": "node scripts/update-version.ts",
 		"test": "vitest"
 	},
