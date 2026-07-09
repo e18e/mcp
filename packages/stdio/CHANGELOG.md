@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.7
+
+### Patch Changes
+
+- a56ec2a: fix: make server worker compatible
+
 ## 0.0.6
 
 ### Patch Changes
