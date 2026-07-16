@@ -9,4 +9,5 @@
 	"workers_dev": false,
 	"preview_urls": true,
 	"compatibility_flags": ["nodejs_compat"],
+	"rules": [{ "type": "Text", "globs": ["**/*.html"] }],
 }
