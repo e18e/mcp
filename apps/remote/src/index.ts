@@ -1,5 +1,6 @@
 import { server, icon_files } from '@e18e/mcp';
 import { HttpTransport } from '@tmcp/transport-http';
+import index_html from './index.html';
 
 const http_transport = new HttpTransport(server, {
 	path: '/mcp',
@@ -17,7 +18,18 @@ const icon_responses = new Map(
 
 export default {
 	async fetch(request): Promise<Response> {
-		const icon = icon_responses.get(new URL(request.url).pathname);
+		const { pathname } = new URL(request.url);
+
+		if (pathname === '/') {
+			return new Response(index_html, {
+				headers: {
+					'content-type': 'text/html; charset=utf-8',
+					'cache-control': 'public, max-age=3600',
+				},
+			});
+		}
+
+		const icon = icon_responses.get(pathname);
 
 		if (icon) {
 			return new Response(icon.bytes, {
