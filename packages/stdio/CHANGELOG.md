@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.10
+
+### Patch Changes
+
+- a9ed7f2: Set correct URL for module-replacements repo.
+
 ## 0.0.9
 
 ### Patch Changes

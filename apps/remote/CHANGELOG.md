@@ -1,5 +1,13 @@
 # @e18e/mcp-remote
 
+## 0.0.4
+
+### Patch Changes
+
+- 86803a1: Add a basic index page to the MCP server.
+- Updated dependencies [a9ed7f2]
+  - @e18e/mcp@0.0.10
+
 ## 0.0.3
 
 ### Patch Changes

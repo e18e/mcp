@@ -9,7 +9,7 @@
 		"subfolder": "packages/stdio",
 		"source": "github"
 	},
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"icons": [
 		{
 			"src": "https://mcp.e18e.dev/icons/icon.svg",
@@ -30,7 +30,7 @@
 		{
 			"registryType": "npm",
 			"identifier": "@e18e/mcp",
-			"version": "0.0.9",
+			"version": "0.0.10",
 			"runtimeHint": "npx",
 			"transport": {
 				"type": "stdio"
