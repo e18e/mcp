@@ -3,11 +3,13 @@ import * as fs from 'node:fs/promises';
 const [, , dev] = process.argv;
 
 const files = await fetch(
-	'https://api.github.com/repos/es-tooling/module-replacements/contents/docs/modules',
+	'https://api.github.com/repos/e18e/module-replacements/contents/docs/modules',
 ).then((res) => res.json());
 
 if (!Array.isArray(files))
-	throw new Error('Unexpected response: files is not an array');
+	throw new Error(
+		`Unexpected response: files is not an array (${typeof files})`,
+	);
 
 const docs: Record<string, string> = {};
 const promises: Array<Promise<void>> = [];
