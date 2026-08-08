@@ -1,5 +1,11 @@
 # @e18e/mcp
 
+## 0.0.11
+
+### Patch Changes
+
+- 9989213: chore: update tmcp to support new protocol version
+
 ## 0.0.10
 
 ### Patch Changes
