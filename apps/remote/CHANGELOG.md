@@ -1,5 +1,12 @@
 # @e18e/mcp-remote
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [9989213]
+  - @e18e/mcp@0.0.11
+
 ## 0.0.4
 
 ### Patch Changes
