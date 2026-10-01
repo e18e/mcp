@@ -11,8 +11,8 @@ catalogs:
       version: 4.107.1
   e18e:
     module-replacements:
-      specifier: ^3.0.0
-      version: 3.0.0
+      specifier: ^3.4.0
+      version: 3.4.0
   mcp:
     '@modelcontextprotocol/inspector':
       specifier: ^2.1.0
@@ -134,7 +134,7 @@ importers:
         version: 1.7.0
       module-replacements:
         specifier: catalog:e18e
-        version: 3.0.0
+        version: 3.4.0
       tmcp:
         specifier: catalog:mcp
         version: 1.20.0-next.1(typescript@5.9.3)
@@ -2247,8 +2247,8 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
-  module-replacements@3.0.0:
-    resolution: {integrity: sha512-tHIZqde+RlyNRobAIjfcH5UIgIrEbZbDGRL6J/x+HERX/g8O9mrm0p6knJbsTXmQtDvZ+eFP+xfOP3/9jHk6YA==}
+  module-replacements@3.4.0:
+    resolution: {integrity: sha512-NKBNFM/uAUvSs+LOYfSly4EwrC9bgMoFuEnqNNjcDb910W+5IgS2KMB2ERLm5YZZm7R187jx1dMA9pOPvqbSbw==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -4942,7 +4942,7 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.2
 
-  module-replacements@3.0.0: {}
+  module-replacements@3.4.0: {}
 
   mri@1.2.0: {}
 
